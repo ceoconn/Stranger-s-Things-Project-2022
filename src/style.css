@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* headings (large text) */ 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); /* navbar, small text i.e. post description etc */
+
+.post {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 3px solid darkblue;
+}
+
+.small {
+    font-family: 'Poppins', sans-serif;
+}
+
+.large {
+    font-family: 'Poppins', sans-serif;
+}
+
+#nav {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.route {
+    text-decoration: none;
+    margin-left: 0.5rem;
+}
+
+
+.route:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: aquamarine;
+}
+
+#register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+#register > * {
+    margin: auto;
+    margin-top: 0.8rem;
+}
+
+#log-in {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+#log-in > * {
+    margin: auto;
+    margin-top: 0.8rem;
+}
+
+#log-out {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    /* margin-left: 0.5rem; */
+    align-items: right;
+    background-color: rgb(182, 72, 154);
+    color: white;
+}
+
+#log-out:hover {
+    text-decoration: underline;
+}
