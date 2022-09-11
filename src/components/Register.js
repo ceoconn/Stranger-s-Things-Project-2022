@@ -20,7 +20,7 @@ const Register = ({ setToken, navigate }) => {
   }
   
   return (
-    <form onSubmit={(event) => {
+    <form id='register' onSubmit={(event) => {
       event.preventDefault();
       handleSubmit();
     }}>
@@ -34,7 +34,7 @@ const Register = ({ setToken, navigate }) => {
         placeholder='Enter Password'
         onChange={(event) => setPassword(event.target.value)}
       />
-      <button type='submit'>Submit</button>
+      <button type='submit'>Sign up</button>
     </form>
   )
 }

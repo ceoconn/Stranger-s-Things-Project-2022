@@ -96,7 +96,7 @@ export const createPost = async (token, {title, description, price, location, wi
           location,
           willDeliver
         }
-      })
+    })
     })
     
     const result = await response.json();

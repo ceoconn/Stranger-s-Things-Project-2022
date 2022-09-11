@@ -6,7 +6,7 @@ const Home = () => {
     <div>
       <h1>Welcome to Stranger's Things!</h1>
       <button>
-        <Link to='/posts/create-post'>Add a Post</Link>
+        <Link to='/posts/create-post'>Create a New Listing</Link>
       </button>
     </div>
   )

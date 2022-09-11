@@ -22,16 +22,18 @@
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: row;
+    justify-content: center;
     
 }
 
-.route {
+#nav > * {
     text-decoration: none;
     margin-left: 0.5rem;
+    color: black;
 }
 
 
-.route:hover {
+#nav > *:hover {
     text-decoration: underline;
     font-weight: bold;
     background-color: aquamarine;
