@@ -1,18 +1,19 @@
 import React from 'react';
 import { createPost } from '../api';
 
-const CreatePost = ({ token }) => {
+const CreatePost = ({ token, fetchPosts, navigate }) => {
   const newPost = {
-    title: 'Jasons test post',
-    description: 'testing',
+    title: 'Jasons new new post',
+    description: 'testing 9/10',
     price: 'free',
     location: 'NY',
     willDeliver: false
   }
   
   async function addPost() {
-    const result = await createPost(token, newPost)
-    console.log(result)
+    const results = await createPost(token, newPost)
+    fetchPosts();
+    navigate(`/posts`)
   }
   
   return (

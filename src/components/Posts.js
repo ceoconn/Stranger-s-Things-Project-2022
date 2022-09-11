@@ -16,7 +16,7 @@ const Posts = ({ posts }) => {
             <p>Location: {location}</p>
             {
               isAuthor ? (
-                <button>You are the author</button>
+                <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
               ) : (
                 <Link to={`/posts/${_id}`}>View</Link>
               )

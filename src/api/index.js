@@ -105,3 +105,48 @@ export const createPost = async (token, {title, description, price, location, wi
     console.log('error creating a new post')
   }
 }
+
+
+export const updatePost = async ({token, title, description, price, location, willDeliver, _id})=> {
+  try {
+    const response = await fetch(`${baseURL}/posts/${[_id]}`, {
+      method: "PATCH",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+      },
+      body: JSON.stringify({
+        post: {
+          title,
+          description,
+          price,
+          location,
+          willDeliver
+        }
+      })
+    })
+    
+    const result = await response.json();
+    return result;  
+  } catch(ex) {
+    console.log('error updating post')
+  }
+}
+
+
+export const createMessage = async ({postID, token, message}) => {
+  try {
+    const response = await fetch(`${baseURL}/posts/${postID}/messages`, {
+     method: 'POST',
+     headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`
+     },
+     body: JSON.stringify({
+      message
+     })
+    })
+  } catch(ex) {
+    console.log('error creating message')
+  }
+}
