@@ -6,12 +6,15 @@ const Navbar = ({ logout, token }) => {
     <header>
       <nav id='nav'>
         <Link to='/'>Home</Link>
-        <Link to='/posts'>Posts</Link>
-        <Link to='/profile'>Profile</Link>
-        
+        <Link to='/listing'>Listings</Link>
         {
           token ? (
-            <Link to='/' onClick={ () => logout() }>Logout</Link>
+            <Link to='/profile'>Profile</Link>
+          ) : null
+        }
+        {
+          token ? (
+            <Link id='log-out' to='/' onClick={() => logout()}>Logout</Link>
           ) : (
             <>
               <Link to='/register'>Sign up</Link>
@@ -20,6 +23,11 @@ const Navbar = ({ logout, token }) => {
           )
         }
       </nav>
+      {/* {
+        token ? (
+          <p>Welcome!</p>
+        ) : null
+      } */}
     </header>
   )
 }

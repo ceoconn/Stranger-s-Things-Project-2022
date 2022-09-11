@@ -4,6 +4,7 @@ import { loginUser } from '../api';
 const Login = ({ setToken, navigate }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
   
   const handleSubmit = async () => {
     const results = await loginUser(username, password);
@@ -12,6 +13,7 @@ const Login = ({ setToken, navigate }) => {
       window.localStorage.setItem('token', results.data.token);
       navigate('/profile');
     } else {
+      setError(true);
       console.log(results.error.message)
     }
   }
@@ -32,6 +34,9 @@ const Login = ({ setToken, navigate }) => {
         onChange={(event) => setPassword(event.target.value)}
       />
       <button type='submit'>Sign in</button>
+      <p className={ !error ? 'hidden' : 'error'}>
+        Incorrect username or password, please try again
+        </p>
     </form>
   )
 }

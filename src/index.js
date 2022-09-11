@@ -4,7 +4,7 @@ import { Route, BrowserRouter, Routes, useNavigate } from 'react-router-dom';
 import './style.css';
 import {
   Navbar,
-  Posts,
+  Listing,
   Profile,
   Home,
   Register,
@@ -18,6 +18,8 @@ import {
   getPosts,
   getUserDetails
 } from './api';
+
+import { CssBaseline } from '@mui/material';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
@@ -72,8 +74,8 @@ const App = () => {
           element={<Home />} 
         />
         <Route 
-          path='/posts' 
-          element={<Posts 
+          path='/listing' 
+          element={<Listing 
             posts={posts} 
           />} 
         />
@@ -126,9 +128,11 @@ const App = () => {
 const container = document.querySelector('#container');
 const root = ReactDOM.createRoot(container);
 root.render(
+  <CssBaseline>
   <BrowserRouter>
     <App />
   </BrowserRouter>
+  </CssBaseline>
 );
 
 
