@@ -2,6 +2,7 @@ import { useRadioGroup } from '@mui/material';
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { createMessage } from '../api';
+import { Paper } from '@mui/material';
 
 const SendMessage = ({ postID, token }) => {
   const [message, setMessage] = useState({content: ''});
@@ -37,8 +38,8 @@ const SinglePostView = ({ posts, token }) => {
   const {title, description, location, price, willDeliver} = currentPost;
   
   return (
-    <div>
-      <div>
+    <Paper id='single-card-view' elevation='4'>
+      <div id='inner-card-div'>
         <h3>{title}</h3>
         <p>Description: {description}</p>
         <p>Price: {price}</p>
@@ -49,7 +50,7 @@ const SinglePostView = ({ posts, token }) => {
       {
         activateMessage && <SendMessage postID={postID} token={token}/>
       }
-    </div>
+    </Paper>
   )
 }
 

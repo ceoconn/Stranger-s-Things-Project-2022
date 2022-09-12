@@ -1,32 +1,27 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Paper } from '@mui/material';
+import { TextField } from '@mui/material';
 
 const Listing = ({ posts }) => {
 
   const [search, setSearch] = useState('');
-
-
+  const [filteredPosts, setFilteredPosts] = useState(posts);
 
   function handleSearch() {
+    
 
-    posts.filter(post => {
-      const { description, location, price, title, _id } = post;
-      let result = post.title.match(search)
+    const newFilteredPosts = posts.filter(filteredPost => {
+      const { title } = filteredPost;
 
-      if (result) {
-        console.log('matched', result)
-        return (
-          <div key={_id}>
-            <h3>{title}</h3>
-            <p>Description: {description}</p>
-            <p>Price: {price}</p>
-            <p>Location: {location}</p>
-          </div>
-        )
+      if (title.includes(search)) {
+        return true
+      } else { return false }
 
-      }
     }
     );
+    setFilteredPosts(newFilteredPosts)
+    
   };
 
 
@@ -35,20 +30,26 @@ const Listing = ({ posts }) => {
     <div id='outer div element'>
 
       <div id='outer-search'>
-        <form id='search'>
-          <input type='text' placeholder="search..." onChange={(e) => {
-            setSearch(e.target.value)
+        <form id='filter-form'>
+          <TextField id='search'
+            variant='filled'
+            placeholder="search..."
+            onChange={(e) => {
+              setSearch(e.target.value)
 
-            handleSearch()
-          }} />
+              handleSearch() 
+            }}>
+          </TextField>
         </form>
 
       </div>
       {
-        posts.map((post) => {
-          const { description, location, price, title, _id, isAuthor } = post;
+        filteredPosts.map((filteredPost) => {
+          const { description, location, price, title, _id, isAuthor } = filteredPost;
+
           return (
-            <div key={_id}>
+            <Paper elevation='4'
+              style={{ height: '13rem', marginRight: '25%', marginLeft: '25%', textAlign: 'center' }} key={_id}>
               <h3>{title}</h3>
               <p>Description: {description}</p>
               <p>Price: {price}</p>
@@ -57,10 +58,10 @@ const Listing = ({ posts }) => {
                 isAuthor ? (
                   <Link to={`/posts/edit-post/${_id}`}>Edit</Link>
                 ) : (
-                  <Link to={`/posts/${_id}`}>View</Link>
+                  <Link to={`/posts/${_id}`} style={{ textDecoration: 'none' }}><strong>View</strong></Link>
                 )
               }
-            </div>
+            </Paper>
           )
         })
       }

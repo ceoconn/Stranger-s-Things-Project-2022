@@ -1,5 +1,7 @@
 import React from 'react';
 import { createPost } from '../api';
+import { Button } from '@mui/material';
+import { Switch } from '@mui/material';
 
 const CreatePost = ({ token, fetchPosts, navigate, title, description, price, location, willDeliver }) => {
   const newPost = {
@@ -17,7 +19,7 @@ const CreatePost = ({ token, fetchPosts, navigate, title, description, price, lo
   }
   
   return (
-    <div>
+    <div id='post-form'>
     <form>
       <p>Item:</p>
       <input 
@@ -41,8 +43,7 @@ const CreatePost = ({ token, fetchPosts, navigate, title, description, price, lo
       type='text' 
       placeholder='Where are you selling from?' />
       <p>Are You Willing to Deliver the Item? (Only check if yes!)</p>
-      <input 
-      type='checkbox' 
+      <Switch
       onChange={ (e) =>  {
         e.preventDefault()
         e.target.checked ? willDeliver = true : willDeliver = false
@@ -50,8 +51,9 @@ const CreatePost = ({ token, fetchPosts, navigate, title, description, price, lo
       
     </form>
     
-    <button onClick={() => addPost()}>Create Listing</button>
+    <Button variant='contained' onClick={() => addPost()}>Create Listing</Button>
     </div>
+    
   )
 }
 

@@ -6,18 +6,38 @@ html {
     margin-right: 1rem;
 }
 
+body {
+    background-image: url(./components/alien-outline.jpg);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    background-size: 12rem 16rem;
+    background-color: white;
+}
+
+#welcome-text {
+    width: 100%;
+    text-align: center;
+}
+
+#img {
+    width: 100%;
+    text-align: center;
+    margin-top: 3.5rem;
+}
 
 #nav {
     font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-size: 1.6rem;
     
 }
 
 #nav > * {
     text-decoration: none;
-    margin-left: 0.5rem;
+    margin-left: 1rem;
     color: black;
 }
 
@@ -76,6 +96,11 @@ html {
     animation: 2s anim-lineUp ease-out;
 }
 
+#post-form {
+    margin-top: 5rem;
+    text-align: center;
+}
+
 @keyframes anim-lineUp {
     0% {
       opacity: 0;
@@ -94,3 +119,27 @@ html {
     }
   }
 
+#single-card-view {
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 8%;
+    margin-bottom: 15%;
+    height: 35rem;
+    text-align: center;
+}
+
+#filter-form {
+    position: fixed;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+
+#profile-welcome {
+    font-size: 2rem;
+    text-align: center;
+}
+.home-greeting {
+    font-size: 1.25rem;
+    font-weight: bold;
+
+}

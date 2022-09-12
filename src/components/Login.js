@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { loginUser } from '../api';
+import { TextField } from '@mui/material';
+import { Button } from '@mui/material';
 
 const Login = ({ setToken, navigate }) => {
   const [username, setUsername] = useState('');
@@ -23,17 +25,17 @@ const Login = ({ setToken, navigate }) => {
       event.preventDefault();
       handleSubmit();
     }}>
-      <input 
+      <TextField 
         type='text'
         placeholder='Enter Username'
         onChange={(event) => setUsername(event.target.value)}
       />
-      <input 
+      <TextField
         type='password'
         placeholder='Enter Password'
         onChange={(event) => setPassword(event.target.value)}
       />
-      <button type='submit'>Sign in</button>
+      <Button variant='outlined' type='submit'>Sign in</Button>
       <p className={ !error ? 'hidden' : 'error'}>
         Incorrect username or password, please try again
         </p>

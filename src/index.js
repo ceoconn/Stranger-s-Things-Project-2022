@@ -71,12 +71,16 @@ const App = () => {
       <Routes>
         <Route 
           path='/' 
-          element={<Home />} 
+          element={<Home 
+          token={token}
+          user={user}
+          />} 
         />
         <Route 
           path='/listing' 
           element={<Listing 
             posts={posts} 
+            user={user}
           />} 
         />
         <Route
@@ -103,7 +107,8 @@ const App = () => {
         />
         <Route 
           path='/profile' 
-          element={<Profile user={ user }/>} 
+          element={<Profile 
+            user={ user }/>} 
         />
         <Route 
           path='/register' 

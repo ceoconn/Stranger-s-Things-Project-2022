@@ -98,7 +98,7 @@ export const createPost = async (token, {title, description, price, location, wi
         }
     })
     })
-    
+ 
     const result = await response.json();
     return result;
   } catch(ex) {
@@ -106,6 +106,7 @@ export const createPost = async (token, {title, description, price, location, wi
   }
 }
 
+// export const deletePost = 
 
 export const updatePost = async ({token, title, description, price, location, willDeliver, _id})=> {
   try {

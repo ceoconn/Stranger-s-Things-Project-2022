@@ -28,6 +28,10 @@ const EditPost = ({ posts, token }) => {
     await updatePost(updatedPost)
   }
   
+  async function handleDelete() {
+    const results = await deletePost()
+
+  }
   
   return (
     <form onSubmit={ (ev) => {
@@ -60,7 +64,8 @@ const EditPost = ({ posts, token }) => {
         checked={newWillDeliver}
         onChange={(ev) => setNewWillDeliver(ev.target.checked)}
       />
-      <button type='submit'>Edit Post</button>
+      <button type='submit'>Save Edits</button>
+      <button onClick={ () => handleDelete() }>Delete Listing</button>
     </form>
   )
 }

@@ -1,18 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import alien from './alien-outline.jpg';
+import alien from './alien-face.jpg';
+import { Button } from '@mui/material';
 
-const Home = ({ token }) => {
+const Home = ({ token, user }) => {
   return (
     <>
-    <div>
-      <h1>Welcome to Stranger's Things!</h1>
+    <div id="welcome-text">
+      <h1 id='title'>Welcome to Stranger's Things!</h1>
       {
         token ? (
-          <button>
-            <Link to='/posts/create-post'>Create a New Listing</Link>
-          </button>
-        ) : <p>This site is the best place to buy and sell used goods from your fellow humans!</p>
+          <div>
+          <p className='home-greeting'>Don't worry, {user.username}. Not all strangers are dangerous</p>
+          <Button variant='contained' id="cp-button">
+            <Link to='/posts/create-post' style={{textDecoration:'none', color:'white'}} >Create a New Listing</Link>
+          </Button>
+          </div>
+        ) : <p className='home-greeting'>This site is the best place to buy and sell used goods from your fellow humans!</p>
       }
 
     </div>

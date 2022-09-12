@@ -1,13 +1,15 @@
-import React from 'react';
+
 
 const Profile = ({ user }) => {
   const messages = user.messages;
   const userID = user._id;
-  
-  console.log(user)
+ 
+
+  console.log('USER', user)
   
   return (
     <div>
+      <p id='profile-welcome'>Welcome {user.username}!</p>
       <div>
         <h1>Messages from other users!</h1>
         {
