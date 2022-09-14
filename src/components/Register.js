@@ -9,6 +9,7 @@ const Register = ({ setToken, navigate }) => {
   // const {setToken} = props
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState(false);
 
   const handleSubmit = async () => {
     const results = await registerUser(username, password);
@@ -17,6 +18,7 @@ const Register = ({ setToken, navigate }) => {
       window.localStorage.setItem('token', results.data.token);
       navigate('/profile');
     } else {
+      setError(true);
       console.log(results.error.message)
     }
   }
@@ -38,6 +40,9 @@ const Register = ({ setToken, navigate }) => {
         onChange={(event) => setPassword(event.target.value)}
       />
       <Button variant='outlined' type='submit'>Sign up</Button>
+      <p className={ !error ? 'hidden' : 'error'}>
+        Whoops! Those credentials already exist, try signing in instead, or make up something else!
+        </p>
     </form>
   )
 }

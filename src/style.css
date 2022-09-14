@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /* headings (large text) */ 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); /* navbar, small text i.e. post description etc */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* headings (large text) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+/* navbar, small text i.e. post description etc */
 
 html {
     margin-left: 1rem;
     margin-right: 1rem;
+    height: 100%;
 }
 
 body {
@@ -32,16 +35,16 @@ body {
     flex-direction: row;
     justify-content: center;
     font-size: 1.6rem;
-    
+
 }
 
-#nav > * {
+#nav>* {
     text-decoration: none;
     margin-left: 1rem;
     color: black;
 }
 
-#nav > *:hover {
+#nav>*:hover {
     text-decoration: underline;
     font-weight: bold;
     background-color: aquamarine;
@@ -56,7 +59,7 @@ body {
     margin-top: 3rem;
 }
 
-#register > * {
+#register>* {
     margin: auto;
     margin-top: 0.8rem;
 }
@@ -69,7 +72,7 @@ body {
     margin-top: 3rem;
 }
 
-#log-in > * {
+#log-in>* {
     margin: auto;
     margin-top: 0.8rem;
 }
@@ -93,7 +96,10 @@ body {
 
 .error {
     color: red;
-    animation: 2s anim-lineUp ease-out;
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: bold;
+    animation: 1s anim-lineUp ease-out;
 }
 
 #post-form {
@@ -103,21 +109,24 @@ body {
 
 @keyframes anim-lineUp {
     0% {
-      opacity: 0;
-      transform: translateY(80%);
+        opacity: 0;
+        transform: translateY(80%);
     }
+
     20% {
-      opacity: 0;
+        opacity: 0;
     }
+
     50% {
-      opacity: 1;
-      transform: translateY(0%);
+        opacity: 1;
+        transform: translateY(0%);
     }
+
     100% {
-      opacity: 1;
-      transform: translateY(0%);
+        opacity: 1;
+        transform: translateY(0%);
     }
-  }
+}
 
 #single-card-view {
     margin-left: 25%;
@@ -128,9 +137,13 @@ body {
     text-align: center;
 }
 
+#inner-card-div {
+    padding-top: 12%;
+}
+
 #filter-form {
     position: fixed;
-    margin-left: 3%;
+    margin-left: 5%;
     margin-top: 5%;
 }
 
@@ -138,8 +151,66 @@ body {
     font-size: 2rem;
     text-align: center;
 }
+
 .home-greeting {
     font-size: 1.25rem;
     font-weight: bold;
+}
 
+#edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+#edit-form>* {
+    margin: auto;
+    margin-top: 0.8rem;
+}
+
+#inbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+}
+
+#inbox-msg {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 75%;
+}
+
+#sent-mail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#msg-sent {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 75%;
+}
+
+#your-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#listing{
+    height: 13rem;
+    margin-top:1rem;
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: center;
+    overflow: auto;
 }

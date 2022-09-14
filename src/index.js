@@ -96,6 +96,8 @@ const App = () => {
           element={<EditPost 
             posts={ posts }
             token={ token }
+            navigate={navigate}
+            fetchPosts={ fetchPosts } 
           />}
         />
         <Route
@@ -108,7 +110,9 @@ const App = () => {
         <Route 
           path='/profile' 
           element={<Profile 
-            user={ user }/>} 
+            user={ user }
+            posts={posts}
+            />} 
         />
         <Route 
           path='/register' 

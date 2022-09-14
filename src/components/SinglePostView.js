@@ -44,7 +44,7 @@ const SinglePostView = ({ posts, token }) => {
         <p>Description: {description}</p>
         <p>Price: {price}</p>
         <p>Location: {location}</p>
-        <p>Will Deliver: {willDeliver}</p>
+        <p>Will Deliver: {`${willDeliver}`}</p>
       </div>
       <button onClick={() => setActivateMessage(!activateMessage)}>Message this user</button>
       {

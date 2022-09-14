@@ -23,11 +23,7 @@ const Navbar = ({ logout, token }) => {
           )
         }
       </nav>
-      {/* {
-        token ? (
-          <p>Welcome!</p>
-        ) : null
-      } */}
+      
     </header>
   )
 }

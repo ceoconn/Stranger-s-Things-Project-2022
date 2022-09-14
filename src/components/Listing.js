@@ -15,13 +15,13 @@ const Listing = ({ posts }) => {
       const { title } = filteredPost;
 
       if (title.includes(search)) {
-        return true
+        return filteredPost
       } else { return false }
 
     }
     );
     setFilteredPosts(newFilteredPosts)
-    
+
   };
 
 
@@ -48,8 +48,8 @@ const Listing = ({ posts }) => {
           const { description, location, price, title, _id, isAuthor } = filteredPost;
 
           return (
-            <Paper elevation='4'
-              style={{ height: '13rem', marginRight: '25%', marginLeft: '25%', textAlign: 'center' }} key={_id}>
+            <Paper id='listing' elevation='4'
+              key={_id}>
               <h3>{title}</h3>
               <p>Description: {description}</p>
               <p>Price: {price}</p>

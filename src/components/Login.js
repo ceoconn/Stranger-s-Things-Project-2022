@@ -37,7 +37,7 @@ const Login = ({ setToken, navigate }) => {
       />
       <Button variant='outlined' type='submit'>Sign in</Button>
       <p className={ !error ? 'hidden' : 'error'}>
-        Incorrect username or password, please try again
+        Incorrect username or password, please try again, or try signing up instead
         </p>
     </form>
   )
