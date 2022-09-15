@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { registerUser } from '../api';
 import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const Register = ({ setToken, navigate }) => {
@@ -31,17 +32,17 @@ const Register = ({ setToken, navigate }) => {
       }}>
       <TextField
         type='text'
-        placeholder='Create Username'
+        label='Create Username'
         onChange={(event) => setUsername(event.target.value)}
       />
       <TextField
         type='password'
-        placeholder='Create Password'
+        label='Create Password'
         onChange={(event) => setPassword(event.target.value)}
       />
       <Button variant='outlined' type='submit'>Sign up</Button>
       <p className={ !error ? 'hidden' : 'error'}>
-        Whoops! Those credentials already exist, try signing in instead, or make up something else!
+        Whoops! Those credentials already exist, try <Link to='/login'>signing in</Link> instead, or make up something else!
         </p>
     </form>
   )

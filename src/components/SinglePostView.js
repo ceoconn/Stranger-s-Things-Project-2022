@@ -12,6 +12,7 @@ const SendMessage = ({ postID, token }) => {
   // we need 3 things to make this request
   // Post-id, token, message object containing the content of the message
 
+
   async function addMessage() {
     await createMessage({ postID, message, token })
 
@@ -24,15 +25,16 @@ const SendMessage = ({ postID, token }) => {
       <form id='msg-form' onSubmit={(ev) => {
         ev.preventDefault();
         addMessage();
-
+       
       }}>
         <TextField
           type='text'
-          placeholder='Enter Message'
+          label='Enter Message'
           onChange={(ev) => setMessage({ content: ev.target.value })}
         />
-        <Button id='msg-form-button' variant='contained' type='submit'>Send Message</Button>
+        <Button id='message-form-button' variant='contained' type='submit' style={{marginTop:'0.8vh'}}>Send Message</Button>
       </form>
+     
     ) : (
       <p id='msg-sign-in'>
         You must be  <Link to='/login'> signed in </Link>  to send messages
@@ -54,7 +56,8 @@ const SinglePostView = ({ posts, token }) => {
   const { title, description, location, price, willDeliver } = currentPost;
 
   return (
-    <Paper id='single-card-view' elevation='4'>
+    
+    <Paper id='single-card-view' elevation={4}>
       <div id='inner-card-div'>
         <h3>{title}</h3>
         <p>Description: {description}</p>
@@ -66,7 +69,9 @@ const SinglePostView = ({ posts, token }) => {
       {
         activateMessage && <SendMessage postID={postID} token={token} />
       }
+      <Button id='return-button' variant='text'><Link to='/listing' style={{textDecoration:'none'}}>Back to All Listings</Link></Button>
     </Paper>
+      
   )
 }
 

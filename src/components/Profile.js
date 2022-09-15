@@ -1,4 +1,5 @@
 import { Paper } from '@mui/material';
+import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 
@@ -25,7 +26,7 @@ const Profile = ({ user, posts }) => {
                   <p>Price: {price}</p>
                   <p>Location: {location}</p>
 
-                  <Link to={`/posts/edit-post/${_id}`} id='edit-button'><strong>Edit</strong></Link>
+                  <Button id='edit-button' variant='outlined'><Link to={`/posts/edit-post/${_id}`} style={{color:'black', textDecoration:'none'}}><strong>Edit</strong></Link></Button>
 
                 </Paper>
               ) : null

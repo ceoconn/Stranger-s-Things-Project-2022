@@ -80,110 +80,43 @@ img {
     margin-top: 0.8rem;
 }
 
-@keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-
-    10% {
-        transform: translate(-1px, -2px) rotate(-1deg);
-    }
-
-    20% {
-        transform: translate(-3px, 0px) rotate(1deg);
-    }
-
-    30% {
-        transform: translate(3px, 2px) rotate(0deg);
-    }
-
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    50% {
-        transform: translate(-1px, 2px) rotate(-1deg);
-    }
-
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    70% {
-        transform: translate(3px, 1px) rotate(-1deg);
-    }
-
-    80% {
-        transform: translate(-1px, -1px) rotate(1deg);
-    }
-
-    90% {
-        transform: translate(1px, 2px) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
-    }
-}
-
-#log-out {
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    /* margin-left: 0.5rem; */
-    align-items: right;
-    background-color: rgb(182, 72, 154);
-    color: white;
-}
-
-#log-out:hover {
-    text-decoration: underline;
-}
-
 .hidden {
     display: none;
 }
 
 .error {
-    color: red;
-    font-size: 1.3rem;
-    text-align: center;
-    font-weight: bold;
     animation: 1s anim-lineUp ease-out;
-}
-
-#post-form {
-    margin-top: 5rem;
+    color: red;
+    font-weight: bold;
     text-align: center;
 }
 
 @keyframes anim-lineUp {
     0% {
-        opacity: 0;
-        transform: translateY(80%);
+      opacity: 0;
+      transform: translateY(80%);
     }
-
     20% {
-        opacity: 0;
+      opacity: 0;
     }
-
     50% {
-        opacity: 1;
-        transform: translateY(0%);
+      opacity: 1;
+      transform: translateY(0%);
     }
-
     100% {
-        opacity: 1;
-        transform: translateY(0%);
+      opacity: 1;
+      transform: translateY(0%);
     }
-}
+  }
 
 #single-card-view {
     margin-left: 25%;
     margin-right: 25%;
     margin-top: 8%;
     margin-bottom: 15%;
-    height: 35rem;
+    width: 50%;
     text-align: center;
+    box-shadow: 0px 0px 8px rgba(0, 255, 234, 0.438);
 }
 
 #inner-card-div {
@@ -192,17 +125,23 @@ img {
     padding-top: 8%;
 }
 
+#return-button {
+    display: flex;
+    padding-left: 1rem;
+}
+
 #outer-search {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* #filter-form {
+#filter-form {
     position: fixed;
+    margin-right: 70%;
     margin-left: 5%;
-    margin-top: 5%;
-} */
+    margin-top: 3%;
+}
 
 #profile-welcome {
     font-size: 2rem;
@@ -220,6 +159,7 @@ img {
     width: 50%;
     margin: auto;
     margin-top: 3rem;
+    height: 5vh;
 }
 
 #edit-form>* {
@@ -241,7 +181,7 @@ img {
     justify-content: center;
     margin-top: 0.8rem;
     width: 45%;
-    box-shadow: 0px 0px 8px rgb(237, 0, 245);
+    box-shadow: 0px 0px 8px rgba(237, 0, 245, 0.336);
 }
 
 #sent-mail {
@@ -257,7 +197,7 @@ img {
     justify-content: center;
     margin-top: 1rem;
     width: 45%;
-    box-shadow: 0px 0px 8px rgb(237, 0, 245);
+    box-shadow: 0px 0px 8px rgba(237, 0, 245, 0.37);
 }
 
 #your-posts {
@@ -276,27 +216,22 @@ img {
     padding-right: 0.6rem;
     padding-bottom: 0.3rem;
     text-align: center;
-    box-shadow: 0px 0px 13px rgb(0, 245, 233);
+    box-shadow: 0px 0px 8px rgba(0, 255, 234, 0.438);
     overflow: auto;
 }
 
-/* #edit-button {
-    border-radius: 8px; 
-    padding-left: 0.8rem; 
-    padding-right: 0.8rem; 
-    padding-top: 0.3rem;
-    padding-bottom: 0.3rem;
-    text-decoration: none;
-    background-color: rgba(255, 0, 242, 0.38);
+#edit-button {
+    background-color: rgba(255, 0, 255, 0.397);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.438);
+}
+
+#edit-button:hover {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.438);
 }
 
 #view-button {
-    border: 2px dotted black;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    padding-top: 0.2rem;
-    text-decoration: none;
-} */
+    background-color: rgba(0, 174, 255, 0.575);
+}
 
 #msg-form {
     display: flex;

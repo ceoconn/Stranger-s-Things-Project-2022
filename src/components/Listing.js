@@ -29,9 +29,9 @@ const Listing = ({ posts }) => {
 
 
   return (
-    // <div id='outer-div-element'>
 
     <div id='outer-search'>
+
       <form id='filter-form'>
         <TextField id='search'
           variant='standard'
@@ -49,7 +49,6 @@ const Listing = ({ posts }) => {
           /></p>
       </form>
 
-
       {
         filteredPosts.map((filteredPost) => {
           const { willDeliver, description, location, price, title, _id, isAuthor } = filteredPost;
@@ -66,12 +65,14 @@ const Listing = ({ posts }) => {
                   <p>Location: {location}</p>
                   {
                     isAuthor ? (
-                      <Link to={`/posts/edit-post/${_id}`}><strong>Edit</strong></Link>
+                      <Button id='edit-button' variant='text'><Link to={`/posts/edit-post/${_id}`} style={{color:'black', textDecoration:'none'}}><strong>Edit</strong></Link></Button>
 
                     ) : (
-                      <Link to={`/posts/${_id}`}><strong>View</strong></Link>
+                      <Button id='view-button' variant='contained'><Link to={`/posts/${_id}`} style={{color:'black', textDecoration:'none'}}><strong>View</strong></Link></Button>
                     )
-                  }
+                    }
+      
+                  
                 </Paper>
 
               )
@@ -88,9 +89,9 @@ const Listing = ({ posts }) => {
                 <p>Location: {location}</p>
                 {
                   isAuthor ? (
-                    <Link to={`/posts/edit-post/${_id}`} id='edit-button'><strong>Edit</strong></Link>
+                    <Button id='edit-button' variant='text'><Link to={`/posts/edit-post/${_id}`} style={{color:'black', textDecoration:'none'}}><strong>Edit</strong></Link></Button>
                   ) : (
-                    <Link to={`/posts/${_id}`} id='view-button'><strong>View</strong></Link>
+                    <Button id='view-button' variant='contained'><Link to={`/posts/${_id}`} style={{color:'black', textDecoration:'none'}}><strong>View</strong></Link></Button>
                   )
                 }
               </Paper>
@@ -101,8 +102,6 @@ const Listing = ({ posts }) => {
       }
     </div>
 
-
-    // </div>
   )
 }
 

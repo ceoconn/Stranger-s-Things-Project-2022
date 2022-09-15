@@ -29,12 +29,12 @@ const Login = ({ setToken, navigate }) => {
     }}>
       <TextField
         type='text'
-        placeholder='Enter Username'
+        label='Enter Username'
         onChange={(event) => setUsername(event.target.value)}
       />
       <TextField
         type='password'
-        placeholder='Enter Password'
+        label='Enter Password'
         onChange={(event) => setPassword(event.target.value)}
       />
       <Button variant='outlined' type='submit'>Sign in</Button>
