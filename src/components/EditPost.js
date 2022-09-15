@@ -5,7 +5,7 @@ import { TextField } from '@mui/material';
 import { Button } from '@mui/material';
 import { Switch } from '@mui/material';
 
-const EditPost = ({ posts, token, navigate}) => {
+const EditPost = ({ posts, token, navigate, fetchPosts }) => {
   const { postID } = useParams();
 
   const [currentPost] = posts.filter(post => post._id === postID);
@@ -33,13 +33,12 @@ const EditPost = ({ posts, token, navigate}) => {
     alert('Your post was successfully updated!')
   }
 
-  // const oldPost = currentPost
-
-  // async function handleDelete() {
-  //   const results = await deletePost(token, oldPost)
-  //   fetchPosts();
-  //   navigate('/listing')
-  // }
+  async function handleDelete() {
+    await deletePost(token, currentPost._id);
+    fetchPosts();
+    alert('Your post was successfully deleted!')
+    navigate('/listing')
+  }
 
   return (
     <form id='edit-form' onSubmit={(ev) => {
@@ -71,7 +70,7 @@ const EditPost = ({ posts, token, navigate}) => {
         placeholder='Edited price (in dollars)'
         onChange={(ev) => setNewPrice(ev.target.value)}
       />
-      <p>Would you like to change if you are able to deliver? (currently {`${willDeliver}`})</p>
+      <p>Would you like to change if you are able to deliver? (currently {willDeliver ? 'yes' : 'no'})</p>
       <Switch
         type='checkbox'
         checked={newWillDeliver}
@@ -82,12 +81,7 @@ const EditPost = ({ posts, token, navigate}) => {
         style={{ marginBottom: '2rem' }}>
         Save Edits
       </Button>
-      <Button variant='contained' color='secondary' onClick={() => {
-        console.log('POST_ID:', currentPost._id, 'TOKEN:', token)
-        deletePost(token, currentPost._id);
-        // fetchPosts();
-        // navigate('/listing');
-      }}>Delete this Listing</Button>
+      <Button variant='contained' color='secondary' onClick={() => { handleDelete() }}>Delete this Listing</Button>
     </form>
   )
 }

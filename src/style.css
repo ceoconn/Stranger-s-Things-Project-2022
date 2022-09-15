@@ -4,8 +4,7 @@
 /* navbar, small text i.e. post description etc */
 
 html {
-    margin-left: 1rem;
-    margin-right: 1rem;
+
     height: 100%;
 }
 
@@ -24,9 +23,13 @@ body {
 }
 
 #img {
-    width: 100%;
+    /* width: 100%; */
     text-align: center;
     margin-top: 3.5rem;
+}
+
+img {
+    height: 50vh;
 }
 
 #nav {
@@ -75,6 +78,52 @@ body {
 #log-in>* {
     margin: auto;
     margin-top: 0.8rem;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
 }
 
 #log-out {
@@ -138,14 +187,22 @@ body {
 }
 
 #inner-card-div {
-    padding-top: 12%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 8%;
 }
 
-#filter-form {
+#outer-search {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* #filter-form {
     position: fixed;
     margin-left: 5%;
     margin-top: 5%;
-}
+} */
 
 #profile-welcome {
     font-size: 2rem;
@@ -180,9 +237,11 @@ body {
 
 #inbox-msg {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-top: 1rem;
-    width: 75%;
+    margin-top: 0.8rem;
+    width: 45%;
+    box-shadow: 0px 0px 8px rgb(237, 0, 245);
 }
 
 #sent-mail {
@@ -190,13 +249,15 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding-bottom: 10vh;
 }
 
 #msg-sent {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
-    width: 75%;
+    width: 45%;
+    box-shadow: 0px 0px 8px rgb(237, 0, 245);
 }
 
 #your-posts {
@@ -206,11 +267,57 @@ body {
     text-align: center;
 }
 
-#listing{
-    height: 13rem;
-    margin-top:1rem;
-    margin-right: 25%;
-    margin-left: 25%;
+#listing {
+    width: 40%;
+    margin-top: 1.3rem;
+    margin-right: 30%;
+    margin-left: 30%;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    padding-bottom: 0.3rem;
     text-align: center;
+    box-shadow: 0px 0px 13px rgb(0, 245, 233);
     overflow: auto;
+}
+
+/* #edit-button {
+    border-radius: 8px; 
+    padding-left: 0.8rem; 
+    padding-right: 0.8rem; 
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    text-decoration: none;
+    background-color: rgba(255, 0, 242, 0.38);
+}
+
+#view-button {
+    border: 2px dotted black;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.2rem;
+    text-decoration: none;
+} */
+
+#msg-form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 1.5rem;
+}
+
+#msg-form-button {
+    margin-top: 1rem;
+}
+
+#msg-sign-in {
+    display: flex;
+    margin-top: 0.8rem;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(212, 44, 100);
 }
