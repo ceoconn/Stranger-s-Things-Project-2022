@@ -12,10 +12,11 @@ const SendMessage = ({ postID, token }) => {
   // we need 3 things to make this request
   // Post-id, token, message object containing the content of the message
 
+const [sent, setSent] = useState(false)
 
   async function addMessage() {
     await createMessage({ postID, message, token })
-
+    setSent(true)
   }
 
 
@@ -32,7 +33,8 @@ const SendMessage = ({ postID, token }) => {
           label='Enter Message'
           onChange={(ev) => setMessage({ content: ev.target.value })}
         />
-        <Button id='message-form-button' variant='contained' type='submit' style={{marginTop:'0.8vh'}}>Send Message</Button>
+        <Button className={sent ? 'hidden' : 'message-form-button'} variant='contained' type='submit' style={{marginTop:'0.8vh'}}>Send Message</Button>
+        <p className={sent ? 'sent-alert' : 'hidden'}>Your message was sent!</p>
       </form>
      
     ) : (

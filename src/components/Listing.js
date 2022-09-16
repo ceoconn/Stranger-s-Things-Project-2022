@@ -35,8 +35,7 @@ const Listing = ({ posts }) => {
       <form id='filter-form'>
         <TextField id='search'
           variant='standard'
-          helperText='search'
-          placeholder="what are you looking for?"
+          label="what are you looking for?"
           onChange={(e) => handleSearch(e.target.value)}>
         </TextField>
         <p>Only show posts where seller will deliver:
