@@ -33,7 +33,7 @@ const [sent, setSent] = useState(false)
           label='Enter Message'
           onChange={(ev) => setMessage({ content: ev.target.value })}
         />
-        <Button className={sent ? 'hidden' : 'message-form-button'} variant='contained' type='submit' style={{marginTop:'0.8vh'}}>Send Message</Button>
+        <Button id='message-form-button' variant='contained' type='submit' style={{marginTop:'0.8vh'}}>Send Message</Button>
         <p className={sent ? 'sent-alert' : 'hidden'}>Your message was sent!</p>
       </form>
      
