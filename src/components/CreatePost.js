@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { createPost } from '../api';
 import { useParams } from 'react-router-dom';
 import { Button } from '@mui/material';
-// import Snackbar from '@mui/material/Snackbar';
 import { TextField } from '@mui/material';
 import { Switch } from '@mui/material';
 
@@ -15,8 +14,6 @@ const CreatePost = ({ token, fetchPosts, navigate }) => {
   const [createLocation, setCreateLocation] = useState('');
   const [createWillDeliver, setWillDeliver] = useState(false);
 
-
-  // const [open, setOpen] = useState(false);
 
   async function addPost() {
 
@@ -73,19 +70,11 @@ const CreatePost = ({ token, fetchPosts, navigate }) => {
             { e.target.checked ? setWillDeliver(true) : setWillDeliver(false) }
           }} />
 
+<Button variant='contained' onClick={() => addPost()}>Create Listing</Button>
       </form>
 
-      <Button variant='contained' onClick={() => addPost()}>Create Listing</Button>
-      {/* <Snackbar>
-            open={open};
-            message= {'Your post was successfully created!'};
-            anchorOrigin={{
-              vertical: 'top',
-              horiztonal: 'center',
-            }};
-            autoHideDuration={6000};
-            onClose={ () => setOpen(false) }
-          </Snackbar> */}
+      
+     
     </div>
 
   )
